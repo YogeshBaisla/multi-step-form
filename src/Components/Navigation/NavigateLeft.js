@@ -1,5 +1,5 @@
-export function NavigateLeft(){
+export function NavigateLeft({onClick}){
     return (<>
-    <button>Previous</button>
+    <button onClick={onClick}>Previous</button>
     </>)
 }
