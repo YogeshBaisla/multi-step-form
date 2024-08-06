@@ -1,5 +1,5 @@
 import './App.css';
-import { FormComponent } from './Components/FormComponent';
+import { FormComponent } from './Components/FormComponents/FormComponentPage1';
 
 function App() {
   return (
