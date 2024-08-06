@@ -1,4 +1,4 @@
-export function FormComponent(){
+export function FormComponentPage2(){
     return(
     <>
     <form>

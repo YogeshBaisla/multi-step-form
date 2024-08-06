@@ -1,10 +1,12 @@
 import './App.css';
-import { FormComponent } from './Components/FormComponents/FormComponentPage1';
+import { FormComponentPage1 } from './Components/FormComponents/FormComponentPage1';
+import { FormComponentPage2 } from './Components/FormComponents/FormComponentPage2';
 
 function App() {
   return (
     <div>
-      <FormComponent></FormComponent>
+      <FormComponentPage1/>
+      <FormComponentPage2/>
     </div>
   );
 }
