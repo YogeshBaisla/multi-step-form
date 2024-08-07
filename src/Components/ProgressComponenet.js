@@ -1,5 +1,0 @@
-export function ProgressComponenet(){
-    return(
-        <></>
-    );
-}
