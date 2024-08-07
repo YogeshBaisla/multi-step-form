@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { FormComponentPage1 } from './Components/FormComponents/FormComponentPage1';
 import { FormComponentPage2 } from './Components/FormComponents/FormComponentPage2';
-import { NavigateLeft } from './Components/Navigation/NavigateLeft';
+import { NavigateLeft } from './Components/Navigation/Navigation';
 import { NavigateRight } from './Components/Navigation/NavigateRight';
 
 function App() {
