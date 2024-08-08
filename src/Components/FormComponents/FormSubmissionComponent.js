@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from './Navigation';
+import Navigation from '../Navigation/Navigation';
 
 const Step3 = ({ formData, prevStep }) => {
   const { name, email, phone, address1, address2, city, state, zip } = formData;

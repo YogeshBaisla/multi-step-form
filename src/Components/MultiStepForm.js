@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Step1 from './FormComponents/FormComponentPage1';
 import Step2 from './FormComponents/FormComponentPage2';
 import Step3 from './FormComponents/FormSubmissionComponent';
-import Navigation from './Navigation/Navigation';
-
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -18,51 +16,46 @@ const MultiStepForm = () => {
   });
 
   useEffect(() => {
-    const savedData = localStorage.getItem('formData');
-    if (savedData) {
-      setFormData(JSON.parse(savedData));
-    }
+    const savedData = JSON.parse(localStorage.getItem('formData')) || {};
+    setFormData({ ...formData, ...savedData });
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem('formData', JSON.stringify(formData));
-  }, [formData]);
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
   const handleChange = input => e => {
-    setFormData({ ...formData, [input]: e.target.value });
+    const value = e.target.value;
+    const updatedFormData = { ...formData, [input]: value };
+    setFormData(updatedFormData);
+    localStorage.setItem('formData', JSON.stringify(updatedFormData));
   };
 
-  switch (step) {
-    case 1:
-      return (
+  return (
+    <>
+      {step === 1 && (
         <Step1
           formData={formData}
           handleChange={handleChange}
           nextStep={nextStep}
         />
-      );
-    case 2:
-      return (
+      )}
+      {step === 2 && (
         <Step2
           formData={formData}
           handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
         />
-      );
-    case 3:
-      return (
+      )}
+      {step === 3 && (
         <Step3
           formData={formData}
           prevStep={prevStep}
         />
-      );
-    default:
-      return <div />;
-  }
+      )}
+    </>
+  );
 };
 
 export default MultiStepForm;
+
