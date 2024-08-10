@@ -4,7 +4,12 @@ const Navigation = ({ step, handleNext, handlePrev, handleSubmit }) => {
   return (
     <div className="d-flex justify-content-between mt-3">
       {step > 1 && (
-        <button className="btn btn-secondary" onClick={handlePrev}>
+        <button className="btn btn-primary" onClick={handlePrev}>
+          Back
+        </button>
+      )}
+      {step == 1 && (
+        <button className="btn btn-secondary" onClick={handlePrev} disabled>
           Back
         </button>
       )}
